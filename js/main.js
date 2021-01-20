@@ -6,17 +6,17 @@ const app = Vue.createApp({
         }
     },
     methods:{
-        updateCart(id){
-            this.cart.push(id)
-            console.log(this.cart)
+        updateCart(paylod){
+            this.cart.push(paylod)
+            console.log(paylod.varientId)
         },
         removeCart(id){
-            let index = this.cart.indexOf(id)
-            console.log(id)
-            if(this.cart.length !=0 && 
-                this.cart.indexOf(id) != -1){
+            let index = this.cart.findIndex(x => x.varientId === id)
+            console.log("index:",index)
+            if(this.cart.length !=0 && index != -1){
                 this.cart.splice(index, 1)
                 console.log(this.cart)
+                console.log("Finished");
             }
         }
         

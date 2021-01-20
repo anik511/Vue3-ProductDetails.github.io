@@ -3,7 +3,7 @@ app.component('review-tab', {
     template:
     /*html*/
     `
-    <div>
+    <div class="main-review">
         <span class="tab" :class="{activeTab: selectedTab === tab}"
         v-for="(tab, index) in tabs" :key="index"
         @click="selectedTab = tab">{{tab}}</span>
